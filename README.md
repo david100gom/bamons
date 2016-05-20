@@ -1,1 +1,2 @@
-# Bamon
+# Bamons
+Batch Monitoring System
