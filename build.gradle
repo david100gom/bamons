@@ -9,7 +9,6 @@ group = 'bamons'
 
 repositories {
       mavenCentral()
-      maven { url "http://nexus.nmp-corp.com/content/groups/public" }
       maven { url "http://repo.maven.apache.org/maven2" }
 }
 
