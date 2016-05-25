@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- Stored job-meta in database -->
+    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+        <property name="dataSource" ref="batchDataSource" />
+        <property name="transactionManager" ref="batchTransactionManager" />
+        <property name="databaseType" value="mysql" />
+    </bean>
+
+    <!-- Job 런처 -->
+    <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository" />
+        <property name="taskExecutor">
+            <bean class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
+        </property>
+    </bean>
+
+    <bean id="jobRegistry" class="org.springframework.batch.core.configuration.support.MapJobRegistry" />
+
+    <!-- Application Context가 올라가면서 bean 등록 시, 자동으로 JobRegistry 에 Job을 등록 시켜준다.-->
+    <bean id="jobRegistryBeanPostProcessor" class="org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor">
+        <property name="jobRegistry" ref="jobRegistry" />
+    </bean>
+
+    <!-- Job Operator 용 -->
+    <bean id="jobOperator" class="org.springframework.batch.core.launch.support.SimpleJobOperator">
+        <property name="jobExplorer">
+            <bean class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean">
+                <property name="dataSource" ref="batchDataSource" />
+            </bean>
+        </property>
+        <property name="jobRepository" ref="jobRepository" />
+        <property name="jobRegistry" ref="jobRegistry" />
+        <property name="jobLauncher">
+            <bean parent="jobLauncher">
+                <property name="taskExecutor">
+                    <bean class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
+
+    <!-- MySQL DataSource -->
+    <bean id="batchDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://192.168.3.177:3306/THELOG?useUnicode=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="username" value="themuser" />
+        <property name="password" value="dhkdnaos$#5678" />
+    </bean>
+
+    <bean id="batchTransactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+
+    <!-- create job-meta tables automatically : 처음 구축할때만 주석을 제거한다.
+   	<jdbc:initialize-database data-source="batchDataSource">
+   		<jdbc:script location="classpath:org/springframework/batch/core/schema-drop-mysql.sql" />
+   		<jdbc:script location="classpath:org/springframework/batch/core/schema-mysql.sql" />
+   	</jdbc:initialize-database>
+ 	-->
+</beans>
