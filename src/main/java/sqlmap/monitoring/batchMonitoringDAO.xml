@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="batchMonitoringDAO">
+
+    <!-- JOB 리스트 정보을 가져온다. -->
+    <select id="SELECT_BATCH_JOB_EXECUTION_LIST" resultType="batchJobExecution" parameterType="hashmap">
+         SELECT A.job_execution_id AS jobExecutionId,
+                B.job_name AS jobName,
+                B.job_instance_id AS jobInstanceId,
+                A.start_time AS startTime,
+                IFNULL(A.end_time, '') AS endTime,
+                A.status,
+                A.exit_code AS exitCode,
+                A.exit_message AS exitMessage
+           FROM BATCH_JOB_EXECUTION A,
+                BATCH_JOB_INSTANCE B
+          WHERE A.job_instance_id = B.job_instance_id
+              <if test='startTime != null and startTime != "0"'>
+                AND DATE_FORMAT(A.start_time,'%Y-%m-%d') = #{startTime}
+              </if>
+          ORDER BY A.job_execution_id DESC
+          LIMIT ${start}, ${limit}
+    </select>
+
+    <!-- JOB 리스트 총 카운트 -->
+    <select id="SELECT_BATCH_JOB_EXECUTION_TOTAL_COUNT" resultType="int" parameterType="hashmap">
+        SELECT COUNT(A.job_execution_id)
+          FROM BATCH_JOB_EXECUTION A,
+               BATCH_JOB_INSTANCE B
+         WHERE A.job_instance_id = B.job_instance_id
+              <if test='startTime != null and startTime != "0"'>
+                AND DATE_FORMAT(A.start_time,'%Y-%m-%d') = #{startTime}
+              </if>
+    </select>
+
+    <!-- JOB 정보을 가져온다. -->
+    <select id="SELECT_BATCH_JOB_EXECUTION_INFO" resultType="batchJobExecution" parameterType="int">
+        <![CDATA[
+          SELECT A.job_execution_id AS jobExecutionId,
+                 B.job_name AS jobName,
+                 B.job_instance_id AS jobInstanceId,
+                 A.start_time AS startTime,
+                 IFNULL(A.end_time, '') AS endTime,
+                 A.status,
+                 A.exit_code AS exitCode
+            FROM BATCH_JOB_EXECUTION A,
+                 BATCH_JOB_INSTANCE B
+           WHERE A.job_instance_id = B.job_instance_id AND
+                 A.job_execution_id = #{jobExecutionId}
+        ]]>
+    </select>
+
+    <!-- STEP 리스트 정보을 가져온다. -->
+    <select id="SELECT_BATCH_STEP_EXECUTION_LIST" resultType="batchStepExecution" parameterType="int">
+        <![CDATA[
+          SELECT A.job_execution_id AS jobExecutionId,
+                 B.step_execution_id AS stepExecutionId,
+                 B.step_name AS stepName,
+                 B.start_time AS startTime,
+                 IFNULL(B.end_time, '') AS endTime,
+                 B.status,
+                 B.exit_code AS exitCode,
+                 B.read_count AS readCount,
+                 B.write_count AS writeCount,
+                 B.read_skip_count AS readSkipCount,
+                 B.exit_message AS exitMessage,
+                 (SELECT job_name FROM BATCH_JOB_INSTANCE C WHERE A.job_instance_id = C.job_instance_id) AS jobName,
+                 B.commit_count AS commitCount,
+                 B.read_count AS readCount,
+                 B.filter_count AS filterCount,
+                 B.write_count AS writeCount,
+                 B.read_skip_count AS readSkipCount,
+                 B.write_skip_count AS writeSkipCount,
+                 B.process_skip_count AS processSkipCount,
+                 B.rollback_count AS rollbackCount
+            FROM BATCH_JOB_EXECUTION AS A,
+                 BATCH_STEP_EXECUTION AS B
+           WHERE A.job_execution_id = B.job_execution_id AND
+                 B.job_execution_id = #{jobExecutionId}
+        ]]>
+    </select>
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <typeAliases>
+        <!-- 배치 모니터링 -->
+        <typeAlias alias="batchJobExecution" type="bamons.process.monitoring.domain.BatchJobExecution" />
+        <typeAlias alias="batchStepExecution" type="bamons.process.monitoring.domain.BatchStepExecution" />
+    </typeAliases>
+
+    <mappers>
+        <!-- 배치 모니터링 -->
+        <mapper resource="sqlmap/monitoring/batchMonitoringDAO.xml"/>
+    </mappers>
+
+</configuration>
