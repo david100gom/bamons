@@ -40,19 +40,19 @@
 
     <!-- 날짜별 & 사이즈별 파일 -->
     <appender name="FILE_SIZE_DAILY" class="ch.qos.logback.core.rolling.RollingFileAppender">
-       <file>/usr/local/logback/server.log</file>
-       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <file>/usr/local/logback/server.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- rollover daily -->
             <fileNamePattern>/usr/local/logback/server-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
                 <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- or whenever the file size reaches 200MB -->
-                <maxFileSize>200MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>7</maxHistory>
-       </rollingPolicy>
-       <encoder>
-           <pattern>%date %-5level %logger{35} - %message%n</pattern>
-       </encoder>
+                    <!-- or whenever the file size reaches 200MB -->
+                    <maxFileSize>200MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+                <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %-5level %logger{35} - %message%n</pattern>
+        </encoder>
     </appender>
 
     <root level="ERROR">
