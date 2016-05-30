@@ -33,7 +33,6 @@ public class EmailMonitoringNotifier implements BatchMonitoringNotifier {
     }
 
     private String createMessageContent(JobExecution jobExecution) {
-
         List<Throwable> exceptions = jobExecution.getFailureExceptions();
         StringBuilder content = new StringBuilder();
         content.append("Job execution ID #");
