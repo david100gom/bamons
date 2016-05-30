@@ -27,13 +27,13 @@ public class SampleJsonLineMapper  implements LineMapper<SampleDomain> {
 
 	private JsonLineMapper delegate;
 
-	public SampleDomain mapLine(String line, int lineNumber) throws Exception {
+    public SampleDomain mapLine(String line, int lineNumber) throws Exception {
         Map<String,Object> logAsMap = delegate.mapLine(line, lineNumber);
         SampleDomain sampleDomain = new SampleDomain();
         sampleDomain.setCode((String) logAsMap.get("code"));
         sampleDomain.setName((String) logAsMap.get("name"));
         return sampleDomain;
-	}
+    }
 
 	public void setDelegate(JsonLineMapper delegate) {
         this.delegate = delegate;
