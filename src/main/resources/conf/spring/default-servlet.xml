@@ -13,7 +13,7 @@
        http://www.springframework.org/schema/task
        http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<context:component-scan base-package="bamons" />
+    <context:component-scan base-package="bamons" />
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 
     <task:scheduler id="taskScheduler" pool-size="5"/>
@@ -22,32 +22,32 @@
 
     <mvc:annotation-driven />
 
-	<!-- Freemarker Config -->
-	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-	  <property name="templateLoaderPath" value="/_freemarker/"/>
-	  <property name="defaultEncoding" value="UTF-8" />
-	  <property name="freemarkerVariables">
-	    <map>
-	      <entry key="xml_escape" value-ref="fmXmlEscape"/>
-	    </map>
-	  </property>
-	  <property name="freemarkerSettings">
-		<props>
-		    <prop key="number_format">0.###</prop>
-		    <prop key="date_format">yyyy-MM-dd</prop>
-		</props>
-	  </property>
-	</bean>
+    <!-- Freemarker Config -->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/_freemarker/"/>
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="freemarkerVariables">
+            <map>
+                <entry key="xml_escape" value-ref="fmXmlEscape"/>
+            </map>
+        </property>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="number_format">0.###</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+            </props>
+        </property>
+    </bean>
 
-	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
 
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
-	  	p:order="1"
-	  	p:prefix="/_template/"
-	  	p:suffix=".ftl"
-		p:contentType="text/html; charset=UTF-8"
-		p:exposeSpringMacroHelpers="true"
-		p:exposeRequestAttributes="true"
-		p:exposeSessionAttributes="true" />
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
+        p:order="1"
+        p:prefix="/_template/"
+        p:suffix=".ftl"
+        p:contentType="text/html; charset=UTF-8"
+        p:exposeSpringMacroHelpers="true"
+        p:exposeRequestAttributes="true"
+        p:exposeSessionAttributes="true" />
 
 </beans>
