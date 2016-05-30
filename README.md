@@ -1,6 +1,8 @@
 # Bamons
 Batch Monitoring System
 
+Spring Batch 프레임워크를 이용한 배치 로직의 모니터링하기 위한 오픈소스
+
 #### 메인리스트
 ![Bamons](./document/image/bamons-1.png)
 #### 특정 Job 구동선택
