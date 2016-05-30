@@ -52,7 +52,7 @@ Ext.define('SpringBatch.view.main.JobStart', {
 			allowBlank: false,
 			listeners : {
 				change: function(field, selectedValue) {
-					if(selectedValue == "restoreRawDataJob") {
+					if(selectedValue == "restoreFileJob") {
 						Ext.getCmp('filePath').setVisible(true);
 						Ext.getCmp('targetDate').setVisible(false);
 						Ext.getCmp('filePath').enable();

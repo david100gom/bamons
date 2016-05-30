@@ -122,7 +122,7 @@ Ext.define('SpringBatch.view.main.MainController', {
 				Ext.MessageBox.alert('확인', 'Job Name 을 선택하여 주세요.');
 			}
 			
-			if(jobName == 'restoreRawDataJob') {
+			if(jobName == 'restoreFileJob') {
 				if(Ext.isEmpty(filePath)) {
 					Ext.MessageBox.alert('확인', '파일 경로를 입력하여 주세요');
 				}
