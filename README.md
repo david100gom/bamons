@@ -26,8 +26,8 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 2. 기본소스 생성 컴파일<br>
    sencha -sdk c:\ext-6.0.1\ext-6.0.1 generate app classic SpringBatch ./bamons
 
-3. 개발 환경 컴파일<br>
+3. 개발 환경 컴파일 (bamons 폴더에서)<br>
    sencha app build development
 
-4. 서비스 환경 컴파일<br>
+4. 서비스 환경 컴파일 (bamons 폴더에서)<br>
    sencha app build production
