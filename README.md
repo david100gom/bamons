@@ -9,7 +9,7 @@ Bamons 는 Batch Monitoring System 의 약자로 Spring Batch 프레임워크를
 ##### Job & Step 상세 내역
 ![Bamons](./document/image/bamons-3.png)
 
-### 개발 환경
+##### 개발 환경
 * JDK 7 이상
 * Sencha Cmd v6.1.2.15
 * ext-6.0.1 GPL
