@@ -1,10 +1,8 @@
 # Bamons
 
 Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 배치 프로세스를 모니터링하기 위한 오픈소스 프로젝트이다.
-<br>
-#### 라이센스
-* GPL v3
 <br><br><br>
+
 ##### [Job 메인리스트 화면]
 ![Bamons](./document/image/bamons-1.png)
 ##### [특정 Job 선택 화면]
@@ -15,6 +13,10 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 ![Bamons](./document/image/bamons-3.png)
 
 <br><br>
+#### 라이센스
+* GPL v3
+
+<br>
 #### 개발 환경
 * JDK 7 이상
 * Sencha Cmd v6.1.2.15
