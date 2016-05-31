@@ -46,7 +46,7 @@ public class BatchScheduledTasks {
     private Job restoreFileJob;
 
     // 새벽 1시에 구동
-    @Scheduled(cron = "0 0 1 * * *")
+    //@Scheduled(cron = "0 0 1 * * *")
     public void batchJob() throws Exception {
 
         try {
@@ -64,7 +64,7 @@ public class BatchScheduledTasks {
     }
 
     // 30분 마다 실행
-    @Scheduled(fixedDelay = 1800000)
+    //@Scheduled(fixedDelay = 1800000)
     public void batchJob2() throws Exception {
 
         try {

@@ -32,7 +32,7 @@ public class MonitoringExecutionListener {
 
     @AfterJob
     public void executeAfterJob(JobExecution jobExecution) {
-        // JOB 구동이 실패하였을때
+        // Job 구동이 실패하였을때
         if(jobExecution.getStatus() == BatchStatus.FAILED) {
             monitoringNotifier.notify(jobExecution);
         }
