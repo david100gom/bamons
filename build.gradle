@@ -50,7 +50,7 @@ ext {
 }
 
 dependencies {
-    //compile group: 'com.gtfriends.nsid.client', name: 'nsid-client', version:'0.9.7'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.2'
     compile(group: 'org.apache.poi', name: 'poi', version:'3.14') {
         exclude(module: 'servlet-api')
     }
