@@ -19,6 +19,14 @@
     <!-- Tomcat JNDI  -->
     <jee:jndi-lookup id="dataSource" jndi-name="jdbc/MySqlDS" resource-ref="true"/>
 
+    <!---
+    context.xml
+    <Resource name="jdbc/MySqlDS" username="root" password="1111" url="jdbc:mysql://127.0.0.1:3306/BAMONS?useUnicode=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" validationQuery="select 1" auth=" Container" driverClassName="org.gjt.mm.mysql.Driver" maxActive="50" maxIdle="10" maxWait="-1" type="javax.sql.DataSource"/>
+
+    server.xml
+    <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true"/>
+    -->
+
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" />
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
