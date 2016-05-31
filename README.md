@@ -50,9 +50,9 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 3. 개발 환경 컴파일 (bamons 폴더에서)<br>
    sencha app build development
 
-4. checkout 한 bamons_client 하위의 app 폴더를 복사해서, 3번에서 생성한 개발환경 소스에 오버라이트한다.<br>
+4. checkout 한 bamons_src 하위의 app 폴더를 복사해서, 3번에서 생성한 개발환경 소스에 오버라이트한다.<br>
 
 5. bamons extjs 전체 소스를 개발환경에 복사한 후 개발한다.
 
-5. 개발을 완료되면 서비스 환경(production)으로 컴파일하여 production 파일들만 이관하여 서비스한다.<br>
+6. 개발을 완료되면 서비스 환경(production)으로 컴파일하여 build/production 파일들만 bamons 폴더로 복사후 서비스한다.<br>
    sencha app build production
