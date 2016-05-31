@@ -28,7 +28,7 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 * Job & Step 상세 내역
 
 <br>
-##### Goal
+##### Bamons Goal
 * Job 실시간 모니터링 기능 추가
 * Batch Process 에 연관된 서버 모니터링 기능 추가
 * 통계 그래프 추가
