@@ -21,19 +21,19 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 * Spring Batch 3.0.6.RELEASE
 * Spring Integration 4.2.5.RELEASE
 
-<br><br>
+<br>
 #### Bamons 기능
 * Job 리스트 및 날짜별 검색
 * 특정 Job 구동 (Job 리스트 자동 로딩)
 * Job & Step 상세 내역
 
-<br><br>
+<br>
 ##### Goal
 * Job 실시간 모니터링 기능 추가
 * Batch Process 에 연관된 서버 모니터링 기능 추가
 * 통계 그래프 추가
 
-<br><br>
+<br>
 #### ExtJS 빌드 (예시)
 1. c:\ext-6.0.1 폴더안에 아래의 폴더 생성
     <br> ext-6.0.1    (ext-6.0.1-gpl 버전 압축풀어 놓음)
