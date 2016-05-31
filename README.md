@@ -7,7 +7,7 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 ![Bamons](./document/image/bamons-1.png)
 ##### 특정 Job 구동선택
 ![Bamons](./document/image/bamons-2.png)
-##### 특정 Job 구동선택
+##### 특정 Job 구동
 ![Bamons](./document/image/bamons-4.png)
 ##### Job & Step 상세 내역
 ![Bamons](./document/image/bamons-3.png)
