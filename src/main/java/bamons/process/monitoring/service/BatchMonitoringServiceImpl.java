@@ -51,8 +51,8 @@ public class BatchMonitoringServiceImpl implements BatchMonitoringService{
     private JobLauncher jobLauncher;
 
     @Autowired
-    @Qualifier("restoreRawDataJob")
-    private Job restoreRawDataJob;
+    @Qualifier("restoreFileJob")
+    private Job restoreFileJob;
 
     @Autowired
     private BatchMonitoringDAO batchMonitoringDAO;
@@ -222,7 +222,7 @@ public class BatchMonitoringServiceImpl implements BatchMonitoringService{
     @Override
     public void restoreRawData(String filePath) throws Exception {
         JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).addString("filePath", filePath).toJobParameters();
-        JobExecution execution = jobLauncher.run(restoreRawDataJob, jobParameters);
+        JobExecution execution = jobLauncher.run(restoreFileJob, jobParameters);
         execution.getJobId();
     }
 }
