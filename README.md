@@ -13,7 +13,7 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 ![Bamons](./document/image/bamons-3.png)
 
 <br><br>
-#### 라이센스
+#### 라이센스 정책
 * GPL v3
 
 <br>
