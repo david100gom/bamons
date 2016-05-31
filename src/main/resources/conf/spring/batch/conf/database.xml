@@ -12,15 +12,16 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/BAMONS?useUnicode=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
         <property name="username" value="root" />
-        <property name="password" value="1111" />
+        <property name="password" value="" />
     </bean>
 
     <bean id="batchTransactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
 
     <!-- create job-meta tables automatically : 처음 구축할때만 주석을 제거한다.
    	<jdbc:initialize-database data-source="batchDataSource">
+   	    <jdbc:script location="classpath:conf/spring/batch/conf/schema-mysql-batch-sample.sql" />
    		<jdbc:script location="classpath:org/springframework/batch/core/schema-drop-mysql.sql" />
    		<jdbc:script location="classpath:org/springframework/batch/core/schema-mysql.sql" />
    	</jdbc:initialize-database>
- 	-->
+       -->
 </beans>
