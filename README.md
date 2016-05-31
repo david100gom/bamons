@@ -2,6 +2,10 @@
 
 Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 배치 프로세스를 모니터링하기 위한 오픈소스 프로젝트이다.
 <br><br><br>
+##### Goal
+ * Batch Process 에 연관된 서버들의 상태(health check)를 모니터링 할수 있는 기능 추가
+ * 통계 그래프 추가
+
 ##### Job 메인리스트
 ![Bamons](./document/image/bamons-1.png)
 ##### 특정 Job 구동선택
