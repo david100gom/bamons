@@ -26,6 +26,18 @@ import java.util.List;
 
 public class EmailMonitoringNotifier implements BatchMonitoringNotifier {
 
+    @Override
+    public void notify(JobExecution jobExecution) {
+
+        String content = createMessageContent(jobExecution);
+
+        try {
+            // TODO 메일 전송 로직 추가.
+        } catch (Exception ex) {
+
+        }
+    }
+
     private String formatExceptionMessage(Throwable exception) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         exception.printStackTrace(new PrintStream(baos));
@@ -46,16 +58,5 @@ public class EmailMonitoringNotifier implements BatchMonitoringNotifier {
             content.append(formatExceptionMessage(exception));
         }
         return content.toString();
-    }
-
-    public void notify(JobExecution jobExecution) {
-
-        String content = createMessageContent(jobExecution);
-
-        try {
-            // 메일 전송 로직 추가.
-        } catch (Exception ex) {
-
-        }
     }
 }

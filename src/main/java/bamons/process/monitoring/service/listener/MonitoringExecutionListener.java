@@ -30,6 +30,12 @@ public class MonitoringExecutionListener {
     public void executeBeforeJob(JobExecution jobExecution) {
     }
 
+    /**
+     *
+     * Job 구동 완료 후 Call
+     *
+     * @param jobExecution JobExecution 객체
+     */
     @AfterJob
     public void executeAfterJob(JobExecution jobExecution) {
         // Job 구동이 실패하였을때
