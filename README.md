@@ -24,7 +24,7 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 <br>
 #### Bamons 기능
 * Job 리스트 및 날짜별 검색
-* 특정 Job 구동 (Job 리스트 자동 로딩)
+* 특정 Job 구동 (설정 Job 리스트 자동 로딩)
 * Job & Step 상세 내역
 
 <br>
