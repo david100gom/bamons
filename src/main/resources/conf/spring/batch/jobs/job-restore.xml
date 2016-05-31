@@ -10,7 +10,7 @@
     <batch:job id="restoreFileJob" xmlns="http://www.springframework.org/schema/batch">
         <batch:step id="restoreFileChunkStep">
             <batch:tasklet>
-                <batch:chunk reader="multifileReader" writer="fileItemWriter" commit-interval="100" >
+                <batch:chunk reader="multifileReader" writer="fileItemWriter" commit-interval="100" skip-limit="100">
                 <batch:skippable-exception-classes>
                     <batch:include class="org.springframework.dao.DataIntegrityViolationException"/>
                     <batch:include class="org.springframework.batch.item.file.FlatFileParseException"/>
