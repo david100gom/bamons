@@ -81,7 +81,6 @@ Ext.define('SpringBatch.view.main.MainController', {
 						page : 1
 					},
 					callback: function (records) {
-						//Ext.getCmp('jobExecutionId').setValue(store.getAt(0).data.jobExecutionId);
 						store.proxy.extraParams.startTime = startTime;
 					}
 				});
@@ -183,16 +182,6 @@ Ext.define('SpringBatch.view.main.MainController', {
 			});
 		}
 
-		// 방법 2
-		//var targetDate = Ext.Date.format(this.lookupReference('targetDate').getValue(),'Y-m-d');
-		//var jobName = this.lookupReference('jobName').getValue();
-
-		//if(Ext.isEmpty(targetDate)) {
-		//	Ext.MessageBox.alert('확인', '통계날짜를 선택하여 주세요');
-		//}else if(Ext.isEmpty(jobName)) {
-		//	Ext.MessageBox.alert('확인', 'Job Name 을 선택하여 주세요.');
-		//}
-
     },
 
     // Job 재구동
@@ -200,7 +189,6 @@ Ext.define('SpringBatch.view.main.MainController', {
 
 		var record = this.getViewModel().get('jobStepRecord');
 		console.log(record.data.jobExecutionId);
-		//console.log(rec);
 
 		Ext.MessageBox.confirm('확인', 'Job을 구동하시겠습니까?', function(btn){
 			if (btn == 'yes') {
@@ -252,7 +240,6 @@ Ext.define('SpringBatch.view.main.MainController', {
 
         var record = this.getViewModel().get('jobStepRecord');
         console.log(record.data.jobExecutionId);
-        //console.log(rec);
 
         Ext.MessageBox.confirm('확인', 'Job을 중지하시겠습니까?', function(btn){
             if (btn == 'yes') {
@@ -307,7 +294,7 @@ Ext.define('SpringBatch.view.main.MainController', {
 
     onConfirm: function (choice) {
         if (choice === 'yes') {
-            //
+
         }
     }
 });

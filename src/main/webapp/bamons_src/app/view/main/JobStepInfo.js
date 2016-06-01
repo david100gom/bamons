@@ -25,25 +25,12 @@ Ext.define('SpringBatch.view.main.JobStepInfo', {
 
         var me = this;
 		var rec = this.getViewModel().get('jobStepRecord');
-
-		//console.log(rec.data.jobExecutionId);
 		var store = Ext.data.StoreManager.lookup('BatchStepExecutionStore');
-        //store.getProxy().setExtraParam("jobExecutionId", rec.data.jobExecutionId);
 		store.load({
             params: {
                 jobExecutionId: rec.data.jobExecutionId
             },
             callback : function(records, operation, success){
-
-				//Ext.getCmp('jobExecutionId').setValue(store.getAt(0).data.jobExecutionId);
-				//Ext.getCmp('jobName').setValue(store.getAt(0).data.jobName);
-				//Ext.getCmp('startTime').setValue(store.getAt(0).data.startTime);
-				//Ext.getCmp('endTime').setValue(store.getAt(0).data.endTime);
-				//Ext.getCmp('status').setValue(store.getAt(0).data.status);
-				//Ext.getCmp('exitCode').setValue(store.getAt(0).data.exitCode);
-				//console.log(store.getAt(0).data);
-				//console.log(operation.getProxy().getReader().rawData.params);	//리턴된 json 데이터전체
-				
 				Ext.getCmp('params').setValue(operation.getProxy().getReader().rawData.message);
             }
         });
@@ -138,14 +125,7 @@ Ext.define('SpringBatch.view.main.JobStepInfo', {
 	            ],
                 listeners: {
                     afterrender: function (form, record) {
-                        //Ext.getCmp('jobExecutionId').setValue(store.getAt(0).data.jobExecutionId);
-                        //Ext.getCmp('jobName').setValue(store.getAt(0).data.jobName);
-                        //Ext.getCmp('startTime').setValue(store.getAt(0).data.startTime);
-                        //Ext.getCmp('endTime').setValue(store.getAt(0).data.endTime);
-                        //Ext.getCmp('status').setValue(store.getAt(0).data.status);
-                        //Ext.getCmp('exitCode').setValue(store.getAt(0).data.exitCode);
 
-                       //console.log(store.getAt(0).data);
                     }
                 }
             },
@@ -220,9 +200,6 @@ Ext.define('SpringBatch.view.main.JobStepInfo', {
                                 var clickedDataIndex = view.panel.headerCt.getHeaderAtIndex(cellIndex).dataIndex;
                                 var clickedColumnName = view.panel.headerCt.getHeaderAtIndex(cellIndex).text;
                                 var clickedCellValue = record.get(clickedDataIndex);
-
-                                //console.log(clickedCellValue);
-                                //Ext.Msg.alert('Cell Value', clickedCellValue);
                                 var win = Ext.create('SpringBatch.view.main.StepInfo', {
 									viewModel: {
 										data: {
