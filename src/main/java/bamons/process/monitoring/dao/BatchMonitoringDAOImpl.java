@@ -34,7 +34,7 @@ public class BatchMonitoringDAOImpl extends SqlSessionDaoSupport implements Batc
     @Resource(name="sqlSessionFactory")
     public void setSqlSessionFactory(SqlSessionFactory factory) {
             super.setSqlSessionFactory(factory);
-        }
+    }
 
     /**
      *
