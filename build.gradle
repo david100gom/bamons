@@ -33,7 +33,7 @@ allprojects {
             resources {
                 srcDir "src/main/resources-${profile}"
             }
-            // sqlmap을 build 하기위해 옵션추가.java파일은 예외처리 하였습니다.
+            // .java파일 예외처리
             resources {
                 srcDir "src/main/java"
                 exclude 'kr/**'
