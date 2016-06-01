@@ -30,7 +30,7 @@ Ext.define('SpringBatch.view.main.BatchList', {
 	   handler: 'onSearchClick'
     },{
        xtype: 'button',
-	   text: '초기화',
+	   text: '검색 초기화',
 	   handler: 'onSearchResetClick'
     }],
     /*
