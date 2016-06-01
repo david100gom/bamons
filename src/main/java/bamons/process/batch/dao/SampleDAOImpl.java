@@ -22,6 +22,8 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 public class SampleDAOImpl extends SqlSessionDaoSupport implements SampleDAO {
@@ -31,8 +33,18 @@ public class SampleDAOImpl extends SqlSessionDaoSupport implements SampleDAO {
         super.setSqlSessionFactory(factory);
     }
 
+    /**
+     *
+     *  특정 날짜의 데이터 건수
+     *
+     * @param targetDate 날짜
+     * @return 건수
+     * @throws Exception
+     */
     @Override
-    public int getTotalCount() throws Exception {
-        return getSqlSession().selectOne("sampleDAO.SELECT_TOTAL_COUNT");
+    public int getTotalCount(String targetDate) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("targetDate", targetDate);
+        return getSqlSession().selectOne("sampleDAO.SELECT_TOTAL_COUNT", params);
     }
 }

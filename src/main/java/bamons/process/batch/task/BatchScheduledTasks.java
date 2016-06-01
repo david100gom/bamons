@@ -69,6 +69,7 @@ public class BatchScheduledTasks {
 
         try {
 
+            // 실제 json 파일 위치 (예제파일 : test/resources)
             String filePath = "/usr/local/*.json";
 
             JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).addString("filePath", filePath).toJobParameters();

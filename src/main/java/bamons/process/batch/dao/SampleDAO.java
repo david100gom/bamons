@@ -19,5 +19,6 @@ package bamons.process.batch.dao;
 
 public interface SampleDAO {
 
-    public int getTotalCount() throws Exception;
+    // 특정 날짜의 데이터 건수
+    public int getTotalCount(String targetDate) throws Exception;
 }

@@ -40,10 +40,19 @@ public class SampleTasklet  implements Tasklet {
         this.targetDate = targetDate;
 	}
 
+    /**
+     *
+     * 비즈니스 구동 메소드
+     *
+     * @param contribution StepContribution 객체
+     * @param chunkContext ChunkContext 객체
+     * @return RepeatStatus 객체
+     * @throws Exception
+     */
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 
-        int count = sampleDAO.getTotalCount();
+        int count = sampleDAO.getTotalCount(targetDate);
 
         return RepeatStatus.FINISHED;
     }
