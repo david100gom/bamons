@@ -32,6 +32,7 @@ public class SampleJsonLineMapper  implements LineMapper<SampleDomain> {
         SampleDomain sampleDomain = new SampleDomain();
         sampleDomain.setCode((String) logAsMap.get("code"));
         sampleDomain.setName((String) logAsMap.get("name"));
+        sampleDomain.setTargetDate((String) logAsMap.get("target_date"));
         return sampleDomain;
     }
 

@@ -49,7 +49,7 @@ public class BatchScheduledTasks {
 
     // 새벽 1시에 구동
     //@Scheduled(cron = "0 0 1 * * *")
-    public void batchJob() throws Exception {
+    public void sampleJob() throws Exception {
 
         try {
 
@@ -67,11 +67,11 @@ public class BatchScheduledTasks {
 
     // 30분 마다 실행
     //@Scheduled(fixedDelay = 1800000)
-    public void batchJob2() throws Exception {
+    public void fileJob() throws Exception {
 
         try {
 
-            // 실제 json 파일 위치 (예제파일 : test/resources)
+            // 실제 json 파일 위치 (예제파일 : test/resources/sample.json)
             String filePath = "/usr/local/*.json";
 
             JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).addString("filePath", filePath).toJobParameters();
