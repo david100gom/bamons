@@ -20,7 +20,6 @@
                     </batch:retryable-exception-classes>
                     <batch:skippable-exception-classes>
                         <batch:include class="org.springframework.dao.DataIntegrityViolationException"/>
-                        <batch:include class="org.springframework.batch.item.file.FlatFileParseException"/>
                     </batch:skippable-exception-classes>
                 </batch:chunk>
             </batch:tasklet>
@@ -44,7 +43,7 @@
         <property name="sql">
             <value>
                 <![CDATA[
-                    SELECT code, name, target_date AS targetDate FROM SAMPLE_TEMP
+                    SELECT code, name, target_date AS targetDate FROM SAMPLE_TEMP WHERE target_date = '#{jobParameters['targetDate']}'
                 ]]>
             </value>
         </property>

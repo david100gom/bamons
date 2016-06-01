@@ -30,6 +30,7 @@ public class SampleRawDataRowMapper implements RowMapper<SampleDomain> {
         SampleDomain sampleDomain = new SampleDomain();
         sampleDomain.setCode(resultSet.getString("code"));
         sampleDomain.setName(resultSet.getString("name"));
+        sampleDomain.setTargetDate(resultSet.getString("targetDate"));
         return sampleDomain;
     }
 

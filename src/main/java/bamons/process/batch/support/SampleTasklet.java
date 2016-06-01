@@ -51,9 +51,8 @@ public class SampleTasklet  implements Tasklet {
      */
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-
         int count = sampleDAO.getTotalCount(targetDate);
-
+        logger.error("Total Count : {}", count);
         return RepeatStatus.FINISHED;
     }
 }

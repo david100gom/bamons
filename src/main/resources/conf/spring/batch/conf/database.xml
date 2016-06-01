@@ -19,9 +19,10 @@
 
     <!-- create job-meta tables automatically : 처음 구축할때만 주석을 제거한다.
    	<jdbc:initialize-database data-source="batchDataSource">
+        <jdbc:script location="classpath:org/springframework/batch/core/schema-drop-mysql.sql" />
    	    <jdbc:script location="classpath:conf/spring/batch/conf/schema-mysql-batch-sample.sql" />
-   		<jdbc:script location="classpath:org/springframework/batch/core/schema-drop-mysql.sql" />
-   		<jdbc:script location="classpath:org/springframework/batch/core/schema-mysql.sql" />
+        <jdbc:script location="classpath:org/springframework/batch/core/schema-mysql.sql" />
    	</jdbc:initialize-database>
-       -->
+   	-->
+
 </beans>
