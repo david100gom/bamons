@@ -17,13 +17,13 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 * 자유롭게 소스를 사용하셔도 되지만, 상업적인 용도로는 사용이 불가능합니다.
 
 <br>
-개발 환경
-* JDK 7 이상
-* Sencha Cmd v6.1.2.15
-* ext-6.0.1 GPL
-* Spring 4.2.0.RELEASE
-* Spring Batch 3.0.6.RELEASE
-* Spring Integration 4.2.5.RELEASE
+##### 개발 환경
+* JDK 7 이상<br>
+* Sencha Cmd v6.1.2.15<br>
+* ext-6.0.1 GPL<br>
+* Spring 4.2.0.RELEASE<br>
+* Spring Batch 3.0.6.RELEASE<br>
+* Spring Integration 4.2.5.RELEASE<br>
 
 <br>
 Bamons 기능
