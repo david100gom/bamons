@@ -40,9 +40,9 @@ Bamons (Batch Monitoring System)는 Spring Batch 프레임워크를 이용한 �
 
 <br><br>
 #### ExtJS 빌드 (예시)<br>
-1. c:\ext-6.0.1 폴더안에 아래의 폴더 생성<br>
-    <br> ext-6.0.1    (ext-6.0.1-gpl 버전 압축풀어 놓음)<br>
-    <br> bamons       (소스 생성을 위한 프로젝트폴더)<br>
+1. c:\ext-6.0.1 폴더안에 아래의 폴더 생성
+    <br> ext-6.0.1    (ext-6.0.1-gpl 버전 압축풀어 놓음)
+    <br> bamons       (소스 생성을 위한 프로젝트폴더)
 
 2. 기본소스 생성 컴파일<br>
    sencha -sdk c:\ext-6.0.1\ext-6.0.1 generate app classic SpringBatch ./bamons<br>
