@@ -34,6 +34,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
+/**
+ *
+ * 배치 모니터링 컨트롤러
+ *
+ */
 @Controller
 public class BatchMonitoringController {
 
